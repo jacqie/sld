@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Name:</b>
+  <%= @sign_language.name %>
+</p>
+
+<p>
+  <b>Acronym:</b>
+  <%= @sign_language.acronym %>
+</p>
+
+<p>
+  <b>Description:</b>
+  <%= @sign_language.description %>
+</p>
+<% @sign_language.meanings.each do |meaning| %>
+  <tr>
+    <td><%= meaning.word.name %>
+    ( <%= meaning.category.name %> ) - 
+    <%= meaning.description %>
+	<%= meaning.signs %>
+    <%= link_to 'Show', meaning %>
+    <%= link_to 'Edit', edit_meaning_path(meaning) %></td>
+  </tr>
+<% end %>
+
+<%= link_to 'Edit', edit_sign_language_path(@sign_language) %> |
+<%= link_to 'Back', sign_languages_path %>

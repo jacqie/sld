@@ -1,0 +1,39 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Description:</b>
+  <%= @sign.description %>
+</p>
+
+<p>
+  <b>Gesturegram:</b>
+  <%= @sign.gesturegram %>
+</p>
+
+<p>
+  <b>Xmldescription:</b>
+  <%= @sign.xmlDescription %>
+</p>
+
+<p>
+  <b>Renderedfile:</b>
+  <%= @sign.renderedFile %>
+</p>
+
+<p>
+  <b>Signlanguage:</b>
+  <%= @sign.signLanguage.acronym %>
+</p>
+<p>
+  <b>Word:</b>
+  <%= @sign.word.name %> ( <%= @sign.category.name %> )-
+</p>
+<p>
+  <b>Meaning:</b>
+  <%= @sign.meaning.description %>
+</p>
+
+
+
+<%= link_to 'Edit', edit_sign_path(@sign) %> |
+<%= link_to 'Back', signs_path %>

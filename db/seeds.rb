@@ -5,3 +5,8 @@
 #
 #   cities = City.create([{ :name => 'Chicago' }, { :name => 'Copenhagen' }])
 #   Mayor.create(:name => 'Daley', :city => cities.first)
+wr = Word.create(:name => 'głowa')
+cat = Category.create(:name =>'anatomia', :description => 'categoria związana z anatomią człowieka')
+mean = Meaning.create(:description => 'majtająca się na szyji niby ważna część ciała', :word => wr,:category =>cat )
+signLanguage = SignLanguage.create(:acronym => 'PJM', :name => 'Polski Język Migowy', :description => 'taki tak oficjalny jezyk w polszy')
+sign = Sign.create(:description => 'slowny opis znaku', :gesturegram => 'gestogram', :xmlDescription => '<xml>pochodzacy z magicznego edytora...</xml>', :renderedFile => 'url/to/file', :signLanguage => signLanguage, :meaning => mean)

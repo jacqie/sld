@@ -1,0 +1,41 @@
+<%= form_for(@sign) do |f| %>
+  <% if @sign.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@sign.errors.count, "error") %> prohibited this sign from being saved:</h2>
+
+      <ul>
+      <% @sign.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+  <div class="field">
+    <%= f.label :signLanguage %><br />
+    <%= f.text_field :signLanguage %>
+  </div>
+  <div class="field">
+    <%= f.label :meaning %><br />
+    <%= f.text_field :meaning%>
+  </div>
+  <div class="field">
+    <%= f.label :description %><br />
+    <%= f.text_area :description %>
+  </div>
+  <div class="field">
+    <%= f.label :gesturegram %><br />
+    <%= f.text_area :gesturegram %>
+  </div>
+  <div class="field">
+    <%= f.label :xmlDescription %><br />
+    <%= f.text_area :xmlDescription %>
+  </div>
+  <div class="field">
+    <%= f.label :renderedFile %><br />
+    <%= f.text_field :renderedFile %>
+  </div>
+  
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

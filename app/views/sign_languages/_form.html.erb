@@ -1,0 +1,29 @@
+<%= form_for(@sign_language) do |f| %>
+  <% if @sign_language.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@sign_language.errors.count, "error") %> prohibited this sign_language from being saved:</h2>
+
+      <ul>
+      <% @sign_language.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :name %><br />
+    <%= f.text_field :name %>
+  </div>
+  <div class="field">
+    <%= f.label :acronym %><br />
+    <%= f.text_field :acronym %>
+  </div>
+  <div class="field">
+    <%= f.label :description %><br />
+    <%= f.text_area :description %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

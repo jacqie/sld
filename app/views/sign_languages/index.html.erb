@@ -1,0 +1,27 @@
+<h1>Listing sign_languages</h1>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Acronym</th>
+    <th>Description</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @sign_languages.each do |sign_language| %>
+  <tr>
+    <td><%= sign_language.name %></td>
+    <td><%= sign_language.acronym %></td>
+    <td><%= sign_language.description %></td>
+    <td><%= link_to 'Show', sign_language %></td>
+    <td><%= link_to 'Edit', edit_sign_language_path(sign_language) %></td>
+    <td><%= link_to 'Destroy', sign_language, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Sign language', new_sign_language_path %>

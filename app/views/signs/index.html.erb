@@ -1,0 +1,33 @@
+<h1>Listing signs</h1>
+
+<table>
+  <tr>
+    <th>Description</th>
+    <th>Gesturegram</th>
+    <th>Xmldescription</th>
+    <th>Renderedfile</th>
+    <th>Signlanguage</th>
+    <th>Meaning</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @signs.each do |sign| %>
+  <tr>
+    <td><%= sign.description %></td>
+    <td><%= sign.gesturegram %></td>
+    <td><%= sign.xmlDescription %></td>
+    <td><%= sign.renderedFile %></td>
+    <td><%= sign.signLanguage %></td>
+    <td><%= sign.meaning %></td>
+    <td><%= link_to 'Show', sign %></td>
+    <td><%= link_to 'Edit', edit_sign_path(sign) %></td>
+    <td><%= link_to 'Destroy', sign, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Sign', new_sign_path %>
